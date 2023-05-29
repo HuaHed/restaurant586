@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 tourist attractions</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <style>
+        #mapid {
+            height: 800px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w3-row">
+        <div id="mapid" class="w3-half"></div>
+        <div id="content" class="w3-half">
+            <table class="w3-table w3-striped">
+                <tr>
+                    <th>ชื่อสถานที่</th>
+                    <th>จังหวัด</th>
+                    <th>คะแนนความนิยม</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+    <script>
+        var map = L.map("mapid").setView([15.370937880748759, 100.83189940228054], 6);
+
+        var osm = L.tileLayer(
+            "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        ).addTo(map);
+        var gsat = L.tileLayer(
+            "https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}"
+        ).addTo(map);
+
+        var baseMaps = {
+            "OSM": osm,
+            "GoogleSat": gsat
+        };
+
+        var tour = {
+            "type": "FeatureCollection",
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "ชื่อสถานที่": "น้ำตกทีลอซู",
+                        "จังหวัด": "ตาก",
+                        "คะแนนความนิยม": "7"
+                    },
+                    "geometry": {
+                        "coordinates": [
+                            98.75336087982822,
+                            15.927099848759951
+                        ],
+                        "type": "Point"
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "ชื่อสถานที่": "อุทยานพระพิฆเนศ",
+                        "จังหวัด": "นครนายก",
+                        "คะแนนความนิยม": 9
+                    },
+                    "geometry": {
+                        "coordinates": [
+                            101.2557670932552,
+                            14.238121386517662
+                        ],
+                        "type": "Point"
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "ชื่อสถานที่": "วัดไตรมิตรวิทยารามวรวิหาร",
+                        "จังหวัด": "กรุงเทพมหานคร",
+                        "คะแนนความนิยม": 8
+                    },
+                    "geometry": {
+                        "coordinates": [
+                            100.5138988220906,
+                            13.738089055224108
+                        ],
+                        "type": "Point"
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "ชื่อสถานที่": "หาดถ้ำพระนาง",
+                        "จังหวัด": "กะบี่",
+                        "คะแนนความนิยม": 7
+                    },
+                    "geometry": {
+                        "coordinates": [
+                            98.91763203375905,
+                            8.092196512794231
+                        ],
+                        "type": "Point"
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "ชื่อสถานที่": "ตู้ไปรษณีย์ยักษ์",
+                        "จังหวัด": "ยะลา",
+                        "คะแนนความนิยม": 7
+                    },
+                    "geometry": {
+                        "coordinates": [
+                            101.29072929812776,
+                            6.558912726651073
+                        ],
+                        "type": "Point"
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "ชื่อสถานที่": "ถนนข้าวสาร",
+                        "จังหวัด": "กรุงเทพมหานคร",
+                        "คะแนนความนิยม": 8
+                    },
+                    "geometry": {
+                        "coordinates": [
+                            100.49882901339942,
+                            13.7583332456298
+                        ],
+                        "type": "Point"
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "ชื่อสถานที่": "พระปฐมเจดีย์",
+                        "จังหวัด": "นครปฐม",
+                        "คะแนนความนิยม": 8
+                    },
+                    "geometry": {
+                        "coordinates": [
+                            100.06002782208782,
+                            13.819730487863026
+                        ],
+                        "type": "Point"
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "ชื่อสถานที่": "เกาะตาเปาใหญ่",
+                        "จังหวัด": "ภูเก็ต",
+                        "คะแนนความนิยม": 9
+                    },
+                    "geometry": {
+                        "coordinates": [
+                            98.41525153234915,
+                            7.828234661566654
+                        ],
+                        "type": "Point"
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "ชื่อสถานที่": "ชายหาดพัทยา",
+                        "จังหวัด": "ชลบุรี",
+                        "คะแนนความนิยม": 10
+                    },
+                    "geometry": {
+                        "coordinates": [
+                            100.88347160825356,
+                            12.939425679050373
+                        ],
+                        "type": "Point"
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "ชื่อสถานที่": "ภูทับเบิก",
+                        "จังหวัด": "เพชรบูรณ์",
+                        "คะแนนความนิยม": 9
+                    },
+                    "geometry": {
+                        "coordinates": [
+                            101.1058638318139,
+                            16.897424919368333
+                        ],
+                        "type": "Point"
+                    }
+                }
+            ]
+        };
+
+        var tourLayer = L.geoJSON(tour, {
+            pointToLayer: function (feature, latlng) {
+                return L.marker(latlng).bindPopup(feature.properties.ชื่อสถานที่);
+            },
+            onEachFeature: function (feature, layer) {
+                layer.on("mouseover", function () {
+                    document.getElementById(feature.properties.ชื่อสถานที่).classList.add("w3-red");
+                });
+
+                layer.on("mouseout", function () {
+                    document.getElementById(feature.properties.ชื่อสถานที่).classList.remove("w3-red");
+                });
+            }
+        }).addTo(map);
+
+        var cont = "";
+        cont += "<table class='w3-table w3-striped'>";
+        cont += "<tr>";
+        cont += "<th>ชื่อสถานที่</th>";
+        cont += "<th>จังหวัด</th>";
+        cont += "<th>คะแนนความนิยม</th>";
+        cont += "</tr>";
+        for (let i in tour.features) {
+            cont += "<tr id='" + tour.features[i].properties.ชื่อสถานที่ + "'>";
+            cont += "<td>" + tour.features[i].properties.ชื่อสถานที่ + "</td>";
+            cont += "<td>" + tour.features[i].properties.จังหวัด + "</td>";
+            cont += "<td>" + tour.features[i].properties.คะแนนความนิยม + "</td>";
+            cont += "</tr>";
+        }
+        cont += "</table>";
+        document.getElementById("content").innerHTML = cont;
+
+        var overlays = {
+            "ชื่อสถานที่": tourLayer
+        };
+        L.control.layers(baseMaps, overlays).addTo(map);
+    </script>
+</body>
+
+</html>
